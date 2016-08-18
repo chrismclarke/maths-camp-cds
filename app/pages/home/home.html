@@ -1,0 +1,24 @@
+<ion-content padding class="home">
+  <img src="CD Resources/images/SAMI-AMI-Kitale-2016.png">
+  <p class="welcome-message">{{customData.WelcomeMessage}}</p>
+  <div class="background" style="background-image: url('CD Resources/images/background.png')">
+    <h2>General Resources</h2>
+  <span *ngFor="let resource of generalResources">
+    <div class="resource-thumb" *ngIf="resource.type=='directory'" (click)="folderClick(resource)">
+      <h3>{{resource.name}}</h3>
+      <img *ngIf="resource.featureImage" class="resource-thumb-image" src="{{resource.featureImage}}" onerror="this.src='CD Resources/images/AmiLogoSq.png'">
+      <p>{{resource.Description}}</p>
+    </div>
+  </span>
+
+    <h2>Theme Resources</h2>
+  <span *ngFor="let resource of themeResources">
+    <div class="resource-thumb" *ngIf="resource.type=='directory'" (click)="folderClick(resource)">
+      <h3>{{resource.name}}</h3>
+      <img *ngIf="resource.featureImage" class="resource-thumb-image" src="{{resource.featureImage}}" onerror="this.src='CD Resources/images/AmiLogoSq.png'">
+      <p>{{resource.Description}}</p>
+    </div>
+  </span>
+  </div>
+
+</ion-content>
